@@ -1,0 +1,28 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #539fd1;
+  height: 25px;
+  padding: 30px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+  text-align: left;
+}
+
+.bold_txt{
+  font-weight: bold;
+}
+
+li {
+  list-style-type: none;
+
+}
+
+a.answerselect:hover {
+  background-color: grey;
+}
