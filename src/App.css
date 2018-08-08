@@ -18,6 +18,12 @@
   font-weight: bold;
 }
 
+.avatar {
+  height: 50px;
+  border-radius: 25px;
+  margin: 4px;
+}
+
 li {
   list-style-type: none;
 

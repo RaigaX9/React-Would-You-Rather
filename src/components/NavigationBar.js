@@ -23,7 +23,7 @@ const NavigationBar = ({ dispatch, authedUser, users }) => {
                     </li>
                     <br/>
                     <li>
-                        <NavLink to='/notanswered'>
+                        <NavLink to='/'>
                             Questions Not Answered
                         </NavLink>
                     </li>

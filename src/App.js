@@ -8,6 +8,7 @@ import Leaderboard from './components/Leaderboard'
 import NavigationBar from './components/NavigationBar'
 import AddNewQuestion from './components/AddNewQuestion'
 import ShowQuestion from './components/ShowQuestion'
+import PageNotFound from './components/404Page';
 import { handleInitialData } from "./actions/shared"
 import './App.css';
 
@@ -26,11 +27,9 @@ class App extends Component {
           </header>
             {!this.props.authedUser && <UserLoggingIn />}
             {this.props.authedUser && <NavigationBar />}
-
-          <Route path='/notanswered' render={() => (this.props.authedUser &&
+          <Route path='/' exact render={() => (this.props.authedUser &&
             <UnansweredQuestions />
           )} />
-
           <Route path='/answered'  render={() => (this.props.authedUser &&
             <AnsweredQuestions />
           )} />

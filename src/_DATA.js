@@ -1,8 +1,8 @@
 let users = {
     sarahedo: {
       id: 'sarahedo',
-      name: 'Sarah Edo',
-      avatarURL: '',
+      name: 'Pikachu',
+      avatarURL: 'https://vignette.wikia.nocookie.net/pokemon/images/0/0d/025Pikachu.png',
       answers: {
         "8xf0y6ziyjabvozdd253nd": 'optionOne',
         "6ni6ok3ym7mf1p33lnez": 'optionOne',
@@ -13,8 +13,8 @@ let users = {
     },
     tylermcginnis: {
       id: 'tylermcginnis',
-      name: 'Tyler McGinnis',
-      avatarURL: '',
+      name: 'Greninja',
+      avatarURL: 'https://vignette.wikia.nocookie.net/fantendo/images/b/b4/Greninja-ssb4.png',
       answers: {
         "vthrdm985a262al8qx3do": 'optionOne',
         "xj352vofupe1dqz9emx13r": 'optionTwo',
@@ -23,8 +23,8 @@ let users = {
     },
     johndoe: {
       id: 'johndoe',
-      name: 'John Doe',
-      avatarURL: "https://www.fillmurray.com/200/210",
+      name: 'Decidueye',
+      avatarURL: 'https://vignette.wikia.nocookie.net/pokemon/images/a/a4/724Decidueye.png',
       answers: {
         "xj352vofupe1dqz9emx13r": 'optionOne',
         "vthrdm985a262al8qx3do": 'optionTwo',

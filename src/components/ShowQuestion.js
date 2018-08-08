@@ -31,7 +31,7 @@ class ShowQuestion extends Component {
     render() {
         const { onClickEvent } = this;
         const { authedUser, questions, id, users } = this.props;
-        const author = users[questions[id].author];
+        let author = users[questions[id].author];
         if (questions[id].optionOne.votes.includes(authedUser) || questions[id].optionTwo.votes.includes(authedUser)) {
 
             let opvote1 = questions[id].optionOne.votes.length;
@@ -44,6 +44,7 @@ class ShowQuestion extends Component {
                     <div>
                         <span>Created By:</span>
                         <div>{author.name}</div>
+                        <div><img alt='avatar' className='avatar' src={author.avatarURL} /></div>
                     </div>
                     <hr/>
                     <div>
@@ -75,9 +76,13 @@ class ShowQuestion extends Component {
         return (
             <div>
                 <div>
-                    Created By:
+                    <span>Created By:</span>
                     <div>{author.name}</div>
+                    <div><img alt='avatar' className='avatar' src={author.avatarURL} /></div>
+
                 </div>
+                <br/>
+                <span className="bold_txt">Would You Rather...</span>
                 <hr/>
                 <a className="answerselect" onClick={() => onClickEvent(id, 'optionOne', authedUser)}>
                     {questions[id].optionOne.text}

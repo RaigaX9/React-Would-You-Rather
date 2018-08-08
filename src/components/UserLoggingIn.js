@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from "react-redux"
 import { userLogin } from '../actions/users'
-import { Redirect } from 'react-router-dom'
+import {Redirect, Route} from 'react-router-dom'
 import { withRouter } from 'react-router-dom'
+import PageNotFound from "./404Page";
 
 class UserLoggingIn extends Component {
 
@@ -14,7 +15,8 @@ class UserLoggingIn extends Component {
         const { users, location } = this.props;
 
         if (location.pathname !== '/') {
-            return <Redirect to='/' />
+            return <Route component={PageNotFound}/>
+
         }
 
         return (
