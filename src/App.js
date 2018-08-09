@@ -38,6 +38,7 @@ class App extends Component {
           )} />
           <Route path='/leaderboard' render={() => (this.props.authedUser && <Leaderboard />)} />
           <Route path='/add' render={() => (this.props.authedUser && <AddNewQuestion />)} />
+            <Route path='/404' render={() => (this.props.authedUser && <PageNotFound />)} />
         </div>
       </Router>
     );

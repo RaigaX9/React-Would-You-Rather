@@ -43,6 +43,11 @@ const NavigationBar = ({ dispatch, authedUser, users }) => {
                             Add New Question
                         </NavLink>
                     </li>
+                    <li className="hideLi">
+                        <NavLink to='/404'>
+                            404
+                        </NavLink>
+                    </li>
                     <li>
                         <Link to='/' onClick={() => {dispatch(userLogin(null))}}>
                             Log Out

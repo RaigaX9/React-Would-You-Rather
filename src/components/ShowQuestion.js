@@ -1,18 +1,30 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { withRouter } from 'react-router-dom'
+import {Redirect, withRouter} from 'react-router-dom'
 import { handleAnswerQuestion } from '../actions/questions'
+import PageNotFound from "./404Page";
 
-const mapStateToProps = ({ authedUser, questions, users }, props) => {
+const mapStateToProps = ({ authedUser, questions, author, users }, props) => {
     const {id} = props.match.params;
 
     return {
         id,
         users,
         questions,
+        author,
         authedUser,
         dispatch: props.dispatch
     }
+};
+
+let getkeyval = (question, value ) => {
+    for( var prop in question ) {
+        if( question.hasOwnProperty( prop ) ) {
+            if( prop.toString() === value.toString() )
+                return prop;
+        }
+    }
+    return "none"
 };
 class ShowQuestion extends Component {
 
@@ -31,14 +43,26 @@ class ShowQuestion extends Component {
     render() {
         const { onClickEvent } = this;
         const { authedUser, questions, id, users } = this.props;
+        console.log(id);
+        //let x = users[questions[id].author];
+        //let x = questions.getkeyval(id).toString();
+        let x = getkeyval(questions, id).toString();
+        if(x === "none"){
+            return(
+                <PageNotFound />
+            )
+        }
         let author = users[questions[id].author];
+
         if (questions[id].optionOne.votes.includes(authedUser) || questions[id].optionTwo.votes.includes(authedUser)) {
 
             let opvote1 = questions[id].optionOne.votes.length;
             let opvote2 = questions[id].optionTwo.votes.length;
             let calcpercentage1 = Math.ceil(Math.round(opvote1 / (opvote1 + opvote2) * 100));
             let calcpercentage2 = Math.ceil(Math.round(opvote2 / (opvote1 + opvote2) * 100));
-
+        /*if(!questions){
+            <Redirect to="404" />
+        }*/
             return (
                 <div>
                     <div>

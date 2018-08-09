@@ -29,6 +29,10 @@ li {
 
 }
 
+.hideLi{
+  display: none;
+}
+
 a.answerselect:hover {
   background-color: grey;
 }
