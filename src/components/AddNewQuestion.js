@@ -35,7 +35,7 @@ class AddNewQuestion extends Component {
         const { op1, op2, redirecthome } = this.state;
 
         if (redirecthome === true) {
-            return <Redirect to='/notanswered' />
+            return <Redirect to='/' />
         }
 
         return (

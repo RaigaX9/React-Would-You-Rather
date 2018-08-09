@@ -33,7 +33,7 @@ class App extends Component {
           <Route path='/answered'  render={() => (this.props.authedUser &&
             <AnsweredQuestions />
           )} />
-          <Route path='/question/:id'  render={() => (this.props.authedUser &&
+          <Route path='/questions/:id'  render={() => (this.props.authedUser &&
             <ShowQuestion />
           )} />
           <Route path='/leaderboard' render={() => (this.props.authedUser && <Leaderboard />)} />

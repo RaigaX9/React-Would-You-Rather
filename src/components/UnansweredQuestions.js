@@ -6,11 +6,13 @@ const mapStateToProps = ({ authedUser, questions }) => {
 
     return {
         questions,
-        questionListFiltered: Object.keys(questions).filter(x => {
-            let usrchoice = !questions[x].optionOne.votes.includes(authedUser)
-                && !questions[x].optionTwo.votes.includes(authedUser);
-            return (usrchoice)
+        questionListFiltered: Object.keys(questions).filter(qa => {
+            return (!questions[qa].optionOne.votes.includes(authedUser)
+                && !questions[qa].optionTwo.votes.includes(authedUser))
         })
+            .sort((a, b) => {
+                return questions[b].timestamp - questions[a].timestamp
+            })
     }
 };
 class UnansweredQuestionList extends Component {
@@ -29,7 +31,7 @@ class UnansweredQuestionList extends Component {
         const { questions, questionListFiltered } = this.props;
 
         return this.state.redirect
-            ? <Redirect to={`/question/${this.state.redirect}`} />
+            ? <Redirect to={`/questions/${this.state.redirect}`} />
             : <Fragment>
                 <h2>Unanswered Questions</h2>
                         {questionListFiltered

@@ -11,6 +11,7 @@ const Leaderboard = ({users}) => {
                     {users.map(user =>
                     <div key={user.id} >
                         <div className="bold_txt">{user.name}</div>
+                        <div><img alt='avatar' className='avatar' src={user.avatarURL} /></div>
                         <div>Asked Questions: {user.questions.length}</div>
                         <div>Questions Answers: {Object.keys(user.answers).length}</div>
                         <hr/>
@@ -31,7 +32,7 @@ const mapStateToProps = ({users}) => {
                     score: (users[user].questions.length + Object.keys(users[user].answers).length)
                 }
             }).sort((x, y) => {
-                return Math.abs(x.score - y.score);
+                return y.score - x.score;
             })
     }
 };
