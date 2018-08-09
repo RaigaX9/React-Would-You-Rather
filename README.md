@@ -27,3 +27,5 @@ Udacity React and Redux Lecture Videos
 ](https://medium.com/mofed/reduxs-mysterious-connect-function-526efe1122e4)
 
 [A Guide to creating Web Applications with React and Redux](https://hackernoon.com/a-guide-to-creating-web-applications-with-react-and-redux-2f6bc0775951)
+
+[How to get a key in a JavaScript object by its value?](https://stackoverflow.com/questions/9907419/how-to-get-a-key-in-a-javascript-object-by-its-value)
